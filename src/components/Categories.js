@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import SelectedNews from '../components/SelectedNews';
+import SelectedNews from './NewsListItem';
 
 class Categories extends Component {
     constructor(props) {

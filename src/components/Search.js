@@ -1,5 +1,5 @@
 import React from 'react';
-import TopNews from '../components/TopNews';
+
 
 const Search = (props) => {
     console.log("xxx", props.articles)

@@ -4,7 +4,7 @@ import Axios from 'axios';
 import { API_KEY, url } from '../data/api';
 import HeaderNav from '../components/HeaderNav';
 import SelectedNewsSingle from '../components/SelectedNewsSingle';
-import TopNews from '../components/TopNews';
+import NewsList from '../components/NewsList';
 import Categories from '../components/Categories';
 import Search from '../components/Search';
 import NotFound from '../components/NotFound';
@@ -37,13 +37,27 @@ class NewsAppMainRouter extends Component {
         )
     }
 
+    displayHeadingTitle() {
+        const message = "Top news from ";
+        const countryFull = this.state.country === "gb" ? "Great Britain" : "United States";
+        return message + countryFull;
+    }
+    
     render() {
         return (
-            <BrowserRouter>
+           <BrowserRouter>
                 <div>
                     <HeaderNav selectCountry={this.selectCountry} />
                     <Switch>
-                        <Route path="/" exact={true} render={(props) => <TopNews {...props} mainTitle={this.state.country} news={this.state.news} />} />
+                        <Route 
+                            path="/" 
+                            exact={true} 
+                            render={
+                                (props) => <NewsList 
+                                                {...props} 
+                                                mainTitle={this.displayHeadingTitle()} 
+                                                news={this.state.news} />} 
+                            />
                         <Route path="/selectednews" component={SelectedNewsSingle} />
                         <Route path="/categories" component={Categories} />
                         <Route path="/search" render={(props) => <Search {...props} country={this.props.country} news={this.state.news} />} />

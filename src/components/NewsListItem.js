@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SelectedNewsSingle from '../components/SelectedNewsSingle';
 
-const SelectedNews = (props) => {
+const NewsListItem = (props) => {
     return (
-        <div>
-                <div class="smallNewsDisplay">
+        <div className="news-list-item-small">
             <h3>{props.title}</h3>
             <img src={`${props.imageUrl}`} alt="test image" />
             <p>{props.description}</p>
             <Link to={{
-                pathname: "/selectedNews",
+                pathname: "/selectednews",
                 state: {
                     title: props.title,
                     imageUrl: props.imageUrl,
@@ -18,10 +16,7 @@ const SelectedNews = (props) => {
                 }
             }}>See More</Link>
         </div>
-        </div>
-
-
     );
 }
 
-export default SelectedNews;
+export default NewsListItem;

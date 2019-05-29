@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const HeaderNav = (props) => {
     return(
         <header>
-            <div>
+            <div className="header-links">
                 <NavLink 
                     to="/" 
                     activeClassName="is-active" 
@@ -22,7 +22,7 @@ const HeaderNav = (props) => {
                 >Search
                 </NavLink>
             </div>
-            <div>
+            <div className="language-selector-buttons">
                 <button 
                     className={props.country==="gb" ? "selected" : ""} 
                     onClick={props.selectCountry} 
