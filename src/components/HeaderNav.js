@@ -19,20 +19,25 @@ const HeaderNav = (props) => {
                 <NavLink 
                     to="/search" 
                     activeClassName="is-active"
+
                 >Search
                 </NavLink>
             </div>
             <div className="language-selector-buttons">
                 <button 
+                    id="headerButton1"
                     className={props.country==="gb" ? "selected" : ""} 
                     onClick={props.selectCountry} 
                     type="button"
+
                 >GB
                 </button>
                 <button 
+                    id="headerButton2"
                     className={props.country==="us" ? "selected" : ""} 
                     onClick={props.selectCountry} 
                     type="button"
+        
                 >US
                 </button>
             </div>

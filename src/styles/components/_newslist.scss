@@ -1,4 +1,4 @@
-.news-list-item-small {
+.news-list-item-small, .news-list-item-small--slider {
     max-width: 30%;
     margin: 2% 1%;
     background: darken(white, 5%);
@@ -58,6 +58,10 @@
     }
 }
 
+.full-width-div {
+    width: 100%;
+}
+
 .news-list-section-main {
     display:flex;
     flex-wrap: wrap;
@@ -83,4 +87,5 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width:100%;
 }

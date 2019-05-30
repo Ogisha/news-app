@@ -1,2 +1,2 @@
-export const API_KEY = "c567d152716e475c9a3ba0b89c152119";
+export const API_KEY = "44baa36765af4f0fa6193e014e1fab8a";
 export const url = "https://newsapi.org/v2/top-headlines?country=";

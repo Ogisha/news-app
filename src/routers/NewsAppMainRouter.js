@@ -14,15 +14,19 @@ class NewsAppMainRouter extends Component {
         super(props);
         this.state = {
             country: "gb",
-            news: []
+            news: [],
+            searchNews: []
         }
         this.selectCountry = this.selectCountry.bind(this);
+        this.recalculate = this.recalculate.bind(this);
+        this.resetSearchResults = this.resetSearchResults.bind(this);
     }
 
     componentDidMount() {
         Axios.get(`${url}${this.state.country}&apiKey=${API_KEY}`)
             .then(response => this.setState({
-                news: response.data.articles
+                news: response.data.articles,
+                searchNews: response.data.articles
             })
         )
     }
@@ -32,7 +36,8 @@ class NewsAppMainRouter extends Component {
         Axios.get(`${url}${choice}&apiKey=${API_KEY}`)
             .then(response => this.setState({
                 news: response.data.articles,
-                country: choice
+                country: choice,
+                searchNews: response.data.articles
             })
         )
     }
@@ -41,6 +46,18 @@ class NewsAppMainRouter extends Component {
         const message = "Top news from ";
         const countryFull = this.state.country === "gb" ? "Great Britain" : "United States";
         return message + countryFull;
+    }
+
+    recalculate(arr) {
+      this.setState({searchNews: [...arr]
+       });
+
+    }
+
+    resetSearchResults() {
+        this.setState({
+            searchNews: [...this.state.news]
+        })
     }
     
     render() {
@@ -60,7 +77,13 @@ class NewsAppMainRouter extends Component {
                             />
                         <Route path="/selectednews" component={SelectedNewsSingle} />
                         <Route path="/categories" component={Categories} />
-                        <Route path="/search" render={(props) => <Search {...props} country={this.props.country} news={this.state.news} />} />
+                        <Route path="/search" render={(props) => <Search 
+                                                {...props} 
+                                                resetSearchResults={this.resetSearchResults} 
+                                                recalculate={this.recalculate}
+                                                country={this.props.country}
+                                                news={this.state.searchNews} />} 
+                        />
                         <Route component={NotFound} />
                     </Switch>
                 </div>

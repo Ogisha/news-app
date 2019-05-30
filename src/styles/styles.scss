@@ -1,6 +1,8 @@
 @import './components/header';
 @import './components/newslist';
 @import './components/selectednewssingle';
+@import './components/slider';
+@import './components/search';
 
 * { outline: none; box-sizing: border-box; }
 html { font-family: Arial, Helvetica, sans-serif, sans-serif; }

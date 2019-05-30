@@ -4,7 +4,7 @@ import NewsListItem from './NewsListItem';
 const NewsList = (props) => {
     return (
         <div className="news-list-section-main">
-            <div>
+            <div class="full-width-div">
                 <h2>{props.mainTitle}</h2>
             </div>
             <div className="news-list-section-flex">
