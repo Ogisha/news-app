@@ -23,6 +23,7 @@
     "pure-react-carousel": "^1.20.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-on-screen": "^2.1.1",
     "react-router-dom": "^5.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",

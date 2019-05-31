@@ -2,11 +2,6 @@ import React from 'react';
 import NewsList from './NewsList';
 
 const Search = (props) => {
-    const onBlurHandle = (e) => {
-       e.target.value = "";
-       props.resetSearchResults();
-    }
-
     const searchNews = (e) => {
         let term = e.target.value;
         let arr = []
@@ -28,11 +23,10 @@ const Search = (props) => {
 
     return (
         <div>
-            <div class="input-field-div">
+            <div className="input-field-div">
                 <input 
                     type="text" 
                     name="searchbar" 
-                    onBlur={onBlurHandle} 
                     onChange={searchNews} 
                 />
             </div>

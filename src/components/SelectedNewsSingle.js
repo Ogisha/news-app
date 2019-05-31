@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { capitalize } from '../data/helper-mothods';
 
 const SelectedNewsSingle = (props) => {
-    console.log(props)
+    const { title, imageUrl, description, customUrl} = props.location.state;
     return (
-        <div class="selected-news-display">
-            <h3>{props.location.state.title}</h3>
-            <img src={`${props.location.state.imageUrl}`} alt="test image" />
-            <p>{props.location.state.description}</p>
-            <Link to="/" exact={true}>To home page</Link>
+        <div className="selected-news-display">
+            <h3>{title}</h3>
+            <img src={`${imageUrl}`} alt="test image" />
+            <p>{description}</p>
+            <Link to={customUrl} exact="true">back to {customUrl || "Homepage"}</Link>
         </div>
-
     );
 }
 

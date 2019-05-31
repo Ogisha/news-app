@@ -33,10 +33,6 @@ class Categories extends Component {
                 }))
             })
         } 
-
-        this.setState({
-            startingNews: this.state.sortedNews[0]
-        })
     }
 
     render() {

@@ -49,15 +49,17 @@ class NewsAppMainRouter extends Component {
     }
 
     recalculate(arr) {
-      this.setState({searchNews: [...arr]
-       });
-
+      this.setState(() => ({
+          searchNews: [...arr]
+       })
+      )
     }
 
     resetSearchResults() {
-        this.setState({
-            searchNews: [...this.state.news]
+        this.setState((prevState) => ({
+            searchNews: this.state.news
         })
+        )
     }
     
     render() {
@@ -75,7 +77,7 @@ class NewsAppMainRouter extends Component {
                                                 mainTitle={this.displayHeadingTitle()} 
                                                 news={this.state.news} />} 
                             />
-                        <Route path="/selectednews" component={SelectedNewsSingle} />
+                        <Route path="/selectedNews" component={SelectedNewsSingle} />
                         <Route path="/categories" component={Categories} />
                         <Route path="/search" render={(props) => <Search 
                                                 {...props} 
@@ -84,6 +86,54 @@ class NewsAppMainRouter extends Component {
                                                 country={this.props.country}
                                                 news={this.state.searchNews} />} 
                         />
+                       <Route 
+                            path="/technology" 
+                            exact={true} 
+                            render={
+                                (props) => <NewsList 
+                                                {...props} 
+                                                mainTitle={props.location.state.title} 
+                                                news={props.location.state.news} />} />
+                        <Route 
+                            path="/sports" 
+                            exact={true} 
+                            render={
+                                (props) => <NewsList 
+                                                {...props} 
+                                                mainTitle={props.location.state.title} 
+                                                news={props.location.state.news} />} />
+                        <Route 
+                            path="/science" 
+                            exact={true} 
+                            render={
+                                (props) => <NewsList 
+                                                {...props} 
+                                                mainTitle={props.location.state.title} 
+                                                news={props.location.state.news} />} />
+                        <Route 
+                            path="/health" 
+                            exact={true} 
+                            render={
+                                (props) => <NewsList 
+                                                {...props} 
+                                                mainTitle={props.location.state.title} 
+                                                news={props.location.state.news} />} />
+                        <Route 
+                            path="/entertainment" 
+                            exact={true} 
+                            render={
+                                (props) => <NewsList 
+                                                {...props} 
+                                                mainTitle={props.location.state.title} 
+                                                news={props.location.state.news} />} />
+                        <Route 
+                            path="/general" 
+                            exact={true} 
+                            render={
+                                (props) => <NewsList 
+                                                {...props} 
+                                                mainTitle={props.location.state.title} 
+                                                news={props.location.state.news} />} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>

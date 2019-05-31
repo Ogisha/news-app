@@ -4,7 +4,7 @@ import NewsListItem from './NewsListItem';
 const NewsList = (props) => {
     return (
         <div className="news-list-section-main">
-            <div class="full-width-div">
+            <div className="full-width-div">
                 <h2>{props.mainTitle}</h2>
             </div>
             <div className="news-list-section-flex">
@@ -14,6 +14,7 @@ const NewsList = (props) => {
                         title={single.title} 
                         imageUrl={single.urlToImage} 
                         description={single.description} 
+                        customUrl={window.location.href}
                     />
                 })}
             </div>
