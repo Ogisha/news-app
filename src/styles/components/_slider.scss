@@ -38,24 +38,22 @@ h3 a {
 }
 
 .buttonNext___2mOCa, .buttonBack___1mlaL {
+    position: absolute;
+    top: 325px;
+    position: absolute;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border: none;
+    background-color: #555;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 1rem;
 
-        position: absolute;
-        top: 325px;
-        position: absolute;
-        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-        text-decoration: none;
-        color: #fff;
-        text-align: center;
-        border: none;
-        background-color: #555;
-        display: inline-block;
-        height: 36px;
-        line-height: 36px;
-        padding: 0 1rem;
-    
-    
     @media screen and (max-width: 640px) {
-    top: 1px;
+        top: 1px;
     }
 }
 
