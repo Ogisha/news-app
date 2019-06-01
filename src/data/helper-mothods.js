@@ -6,21 +6,33 @@ export const setImg = (img) => {
     }
 }
 
+export const getCategoryName = (category) => {
+    switch (category) {
+        case "/categories":
+            return "Categories";
+        case "/search":
+            return "Search";
+        default: 
+            return "Homepage";
+    }
+}
+
 export const capitalize = (word) => {
     if (word.endsWith("/"))
         return "Homepage"
- /*  else if (word.endsWith("/search"))
-        return "Search"*/
+
     if (word.charAt(0) == "/")
         word = word.substring(1);
 
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-export const getUrlLevel = (word) => {
-    let test = window.location.href;
-    if (test.endsWith("/"))
-        return "/";
-    else if (test.endsWith("/search"))
+export const retrieveUrl = (url) => {
+    if (url.endsWith("/categories")) {
+        return "/categories";
+    } else if (url.endsWith("/search")) {
         return "/search";
+    }
+
+    return "/";
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import { setImg, capitalize } from '../data/helper-mothods';
+import { setImg, capitalize, getCategoryName } from '../data/helper-mothods';
 
 const CarouselSlider = (props) => {
     return (
@@ -33,7 +33,8 @@ const CarouselSlider = (props) => {
                                     title: single.title,
                                     imageUrl: setImg(single.urlToImage),
                                     description: single.description,
-                                    customUrl: props.customUrl
+                                    customUrl: props.customUrl,
+                                    category: getCategoryName(props.customUrl)
                                 }
                             }}>See More</Link>
                         </div>
